@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krishna Sagar — App Developer</title>
-  <meta name="description" content="Krishna Sagar — App developer building for iOS, Mac & Android. Creator of Claude Notify VS Code extension.">
+  <title>Krishna Sagar — Developer</title>
+  <meta name="description" content="Krishna Sagar — Developer from India.">
   <meta name="author" content="Krishna Sagar">
-  <meta name="keywords" content="Krishna Sagar, krsnasgr, app developer, iOS, Mac, Android, Claude Notify, VS Code extension">
+  <meta name="keywords" content="Krishna Sagar, krsnasgr, developer, India">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://krsnasgr.com/">
 
@@ -17,92 +17,115 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://krsnasgr.com/">
-  <meta property="og:title" content="Krishna Sagar — App Developer">
-  <meta property="og:description" content="App developer building for iOS, Mac & Android. Creator of Claude Notify VS Code extension.">
+  <meta property="og:title" content="Krishna Sagar — Developer">
+  <meta property="og:description" content="Developer from India.">
   <meta property="og:image" content="https://krsnasgr.com/assets/profile.jpeg">
   <meta property="og:site_name" content="Krishna Sagar">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@krsnasgr">
-  <meta name="twitter:title" content="Krishna Sagar — App Developer">
-  <meta name="twitter:description" content="App developer building for iOS, Mac & Android. Creator of Claude Notify VS Code extension.">
+  <meta name="twitter:title" content="Krishna Sagar — Developer">
+  <meta name="twitter:description" content="Developer from India.">
   <meta name="twitter:image" content="https://krsnasgr.com/assets/profile.jpeg">
 
   <!-- Theme -->
-  <meta name="theme-color" content="#0a0a0f">
+  <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="page">
+  <div class="terminal">
 
-    <!-- Background -->
-    <div class="bg">
-      <img src="assets/header.png" alt="">
-      <div class="bg__code" id="codeMatrix"></div>
-      <div class="bg__overlay"></div>
+    <!-- Title bar -->
+    <div class="titlebar">
+      <div class="titlebar__dots">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+      </div>
+      <div class="titlebar__title">krsnasgr.com</div>
+      <div class="titlebar__spacer"></div>
     </div>
 
-    <!-- Content -->
-    <div class="content">
+    <!-- Terminal body -->
+    <div class="term-body" id="termBody">
 
-      <!-- Column 1: Profile -->
-      <div class="col col--profile">
-        <div class="profile">
-          <div class="profile__img-wrap">
-            <img src="assets/profile.jpeg" alt="Krishna Sagar" class="profile__img">
-            <div class="profile__glow"></div>
-          </div>
-          <div class="profile__info">
-            <h1 class="profile__name">Krishna Sagar</h1>
-            <p class="profile__tag">Developer</p>
-          </div>
+      <!-- User prompt -->
+      <div class="line line--user">
+        <span class="caret">&#10095;</span> who is krishna sagar?
+      </div>
+
+      <!-- Claude response -->
+      <div class="line line--claude">
+        <span class="claude-label">Claude</span>
+      </div>
+      <div class="response">
+        <p><span class="hl">Krishna Sagar</span> is a developer from <span class="dim">India</span>.</p>
+        <p class="tagline">I'm just a front. The <span class="accent">AI</span> is doing all the work behind me.</p>
+      </div>
+
+      <!-- Tool use: Read socials -->
+      <div class="tool">
+        <div class="tool__bar">
+          <span class="tool__arrow">&#9654;</span>
+          <span class="tool__name">Read</span>
+          <span class="tool__path">~/socials.json</span>
         </div>
-        <p class="intro__line">I'm just a front. The <span class="gradient-text">AI</span> is doing all the work behind me.</p>
-        <div class="intro__socials">
-          <!-- GitHub -->
-          <a href="https://github.com/krsnasgr" target="_blank" rel="noopener" class="social" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-          <!-- X / Twitter -->
-          <a href="https://x.com/krsnasgr" target="_blank" rel="noopener" class="social" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <!-- Reddit -->
-          <a href="https://reddit.com/u/krsnasgr-com" target="_blank" rel="noopener" class="social" aria-label="Reddit">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.052 1.602a3.35 3.35 0 01.047.53c0 2.726-3.18 4.934-7.1 4.934S4.795 16.132 4.795 13.406c0-.17.015-.34.043-.504a1.754 1.754 0 01-1.085-1.614c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25s.561 1.25 1.25 1.25 1.25-.562 1.25-1.25S9.939 12 9.25 12zm5.5 0c-.689 0-1.25.562-1.25 1.25s.561 1.25 1.25 1.25 1.25-.562 1.25-1.25S15.439 12 14.75 12zm-4.003 3.478a.326.326 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 3.494.913 1.01 0 2.652-.07 3.494-.913a.33.33 0 000-.463.326.326 0 00-.462 0c-.53.53-1.684.758-3.032.758s-2.502-.228-3.032-.758a.326.326 0 00-.231-.094z"/></svg>
-          </a>
+        <div class="tool__content">
+          <pre><span class="json-key">"github"</span>:     <a href="https://github.com/krsnasgr" target="_blank" rel="noopener" class="json-val">"github.com/krsnasgr"</a>
+<span class="json-key">"x"</span>:          <a href="https://x.com/krsnasgr" target="_blank" rel="noopener" class="json-val">"x.com/krsnasgr"</a>
+<span class="json-key">"reddit"</span>:     <a href="https://reddit.com/u/krsnasgr-com" target="_blank" rel="noopener" class="json-val">"reddit.com/u/krsnasgr-com"</a></pre>
         </div>
       </div>
 
-      <!-- Column 2: Projects -->
-      <div class="col col--projects">
-        <h2 class="projects__title">Projects</h2>
-        <div class="projects__list">
-          <div class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__name">Claude Notify</span>
-              <span class="project-card__badge">VS Code Extension</span>
+      <!-- User prompt 2 -->
+      <div class="line line--user">
+        <span class="caret">&#10095;</span> what has he built?
+      </div>
+
+      <!-- Claude response 2 -->
+      <div class="line line--claude">
+        <span class="claude-label">Claude</span>
+      </div>
+
+      <!-- Tool use: Projects -->
+      <div class="tool">
+        <div class="tool__bar">
+          <span class="tool__arrow">&#9654;</span>
+          <span class="tool__name">Grep</span>
+          <span class="tool__path">~/projects/</span>
+        </div>
+        <div class="tool__content">
+          <div class="project">
+            <div class="project__header">
+              <span class="project__name">Claude Notify</span>
+              <span class="project__badge">vscode extension</span>
             </div>
-            <p class="project-card__desc">Get notified when Claude Code finishes a task — never miss a response while multitasking.</p>
-            <div class="project-card__links">
-              <a href="https://marketplace.visualstudio.com/items?itemName=krsnasgr.claude-code-notify" target="_blank" rel="noopener" class="project-card__link">Marketplace</a>
-              <a href="https://github.com/krsnasgr/claude-notify" target="_blank" rel="noopener" class="project-card__link">GitHub</a>
+            <p class="project__desc">Get notified when Claude Code finishes a task &mdash; never miss a response while multitasking.</p>
+            <div class="project__links">
+              <a href="https://marketplace.visualstudio.com/items?itemName=krsnasgr.claude-code-notify" target="_blank" rel="noopener" class="project__link">[marketplace]</a>
+              <a href="https://github.com/krsnasgr/claude-notify" target="_blank" rel="noopener" class="project__link">[github]</a>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Blinking prompt -->
+      <div class="line line--user line--active">
+        <span class="caret">&#10095;</span><span class="cursor"></span>
+      </div>
+
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
+    <!-- Status bar -->
+    <div class="statusbar">
       <span>krsnasgr.com</span>
+      <span><span class="status-dot"></span> online</span>
     </div>
 
   </div>
