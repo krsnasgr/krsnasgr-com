@@ -118,27 +118,51 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 80px;
+  align-items: stretch;
+  gap: 60px;
   padding: 0 48px;
-  max-width: 960px;
+  max-width: 1100px;
+  width: 100%;
 }
 
-/* --- Profile (left) --- */
-.profile {
+/* --- Columns --- */
+.col {
+  animation: fadeIn .8s ease both;
+}
+
+.col--profile {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   flex-shrink: 0;
-  animation: fadeIn .8s ease both;
+  justify-content: center;
+}
+
+.col--projects {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  animation-delay: .2s;
+  border-left: 1.5px solid var(--accent);
+  padding-left: 60px;
+  box-shadow: inset 24px 0 24px -20px rgba(0, 229, 160, .08);
+}
+
+/* --- Profile --- */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  margin-bottom: 24px;
 }
 
 .profile__img-wrap {
   position: relative;
-  width: 160px;
-  height: 160px;
-  margin-bottom: 24px;
+  width: 64px;
+  height: 64px;
 }
 .profile__img {
   width: 100%;
@@ -175,7 +199,6 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--accent);
-  margin-bottom: 16px;
 }
 
 .profile__platforms {
@@ -194,19 +217,97 @@ img { display: block; max-width: 100%; }
   opacity: .5;
 }
 
-/* --- Intro (right) --- */
-.intro {
-  animation: fadeIn .8s ease .2s both;
+/* --- Intro (in profile column) --- */
+.col--profile .intro__line {
+  font-family: var(--mono);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 280px;
+  color: var(--text-dim);
 }
 
-.intro__line {
+/* --- Projects --- */
+.projects__title {
   font-family: var(--mono);
-  font-size: clamp(1.2rem, 2.8vw, 1.7rem);
-  font-weight: 500;
-  line-height: 1.5;
-  margin-bottom: 36px;
-  max-width: 480px;
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
   color: var(--text-dim);
+  margin-bottom: 18px;
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-card {
+  display: block;
+  padding: 16px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  transition: all .3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  background: rgba(0, 229, 160, .04);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(0, 229, 160, .08);
+}
+
+.project-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.project-card__name {
+  font-family: var(--mono);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.project-card__badge {
+  font-family: var(--mono);
+  font-size: .6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(0, 229, 160, .1);
+  color: var(--accent);
+}
+
+.project-card__desc {
+  font-size: .8rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 14px;
+}
+
+.project-card__link {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+  color: var(--accent2);
+  transition: color .2s ease;
+}
+
+.project-card__link:hover {
+  color: var(--accent);
 }
 
 .intro__socials {
@@ -261,11 +362,31 @@ img { display: block; max-width: 100%; }
 
 /* --- Responsive --- */
 @media (max-width: 700px) {
+  body { overflow: auto; }
+
+  .page {
+    position: relative;
+    min-height: 100dvh;
+    padding: 60px 0;
+  }
+
   .content {
     flex-direction: column;
     gap: 36px;
     text-align: center;
     padding: 0 28px;
+  }
+
+  .col--profile { align-items: center; }
+
+  .col--projects {
+    border-left: none;
+    box-shadow: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 36px;
+    align-items: center;
+    text-align: center;
   }
 
   .profile__img-wrap {
@@ -276,7 +397,8 @@ img { display: block; max-width: 100%; }
 
   .profile__name { font-size: 1.3rem; }
 
-  .intro { text-align: center; }
-  .intro__line { font-size: 1.2rem; }
+  .col--profile .intro__line { font-size: .9rem; }
   .intro__socials { justify-content: center; }
+
+  .project-card__links { justify-content: center; }
 }
