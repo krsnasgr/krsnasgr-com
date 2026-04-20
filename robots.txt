@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krsnasgr.com/sitemap.xml

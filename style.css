@@ -157,6 +157,7 @@ ol, ul { list-style: none; }
   font-size: .78rem;
   color: var(--ink);
   font-weight: 400;
+  text-align: right;
 }
 
 .socials {

@@ -1,0 +1,20 @@
+{
+  "name": "Krishna Sagar",
+  "short_name": "Krishna Sagar",
+  "description": "Managing Director at BlackMatter Builders & Developers and CEO of Car Club Exotic Machines.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/krishna-sagar.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
