@@ -368,13 +368,18 @@ a.vent__link:hover .vent__arrow {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    width: 100%;
   }
 
   .side, .body { display: contents; }
 
   .side { position: static; }
 
-  .portrait         { order: 1; aspect-ratio: 1 / 1; max-width: 200px; }
+  .card > *,
+  .side > *,
+  .body > * { width: 100%; }
+
+  .portrait         { order: 1; aspect-ratio: 1 / 1; max-width: none; }
   .lede             { order: 2; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
   .side__block      { order: 3; margin-top: -4px; }
   .bio              { order: 4; }
@@ -416,8 +421,6 @@ a.vent__link:hover .vent__arrow {
     align-items: flex-start;
     gap: 4px;
   }
-
-  .portrait { max-width: 180px; }
 
   .name { font-size: 2rem; }
 
