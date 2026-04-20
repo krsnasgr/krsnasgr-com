@@ -1,5 +1,5 @@
-/* ========================================
-   KRSNASGR.COM — Terminal interactions
-   ======================================== */
-
-// No JS needed for now — pure CSS handles animations and cursor.
+/* krsnasgr.com — corporate profile */
+document.addEventListener('DOMContentLoaded', () => {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+});
