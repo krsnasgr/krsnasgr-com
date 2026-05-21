@@ -62,9 +62,12 @@
 
   <!-- Performance hints -->
   <link rel="preload" as="image" href="/assets/krishna-sagar.jpg" fetchpriority="high">
+  <!-- Theme: set before paint to avoid flash -->
+  <script>(() => { try { const t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', t); } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); } })();</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- Structured data -->
@@ -220,122 +223,78 @@
 </head>
 <body>
 
-  <div class="shell">
+  <header class="topbar" aria-label="Site controls">
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
 
-    <header class="topbar">
-      <a href="/" class="wordmark">Krishna Sagar</a>
-      <span class="topbar__loc">Thrissur · Kerala · India</span>
-    </header>
+  <main class="page">
 
-    <main class="card">
+    <!-- Hero -->
+    <section class="hero">
+      <img class="avatar" src="assets/krishna-sagar.jpg" alt="Krishna Sagar" width="56" height="56" loading="eager" fetchpriority="high">
+      <div class="hero__text">
+        <h1 class="hello">Hi, I am Krishna.</h1>
+        <p class="role">Real estate developer by day, developer by night.</p>
+      </div>
+    </section>
 
-      <aside class="side">
-        <figure class="portrait">
-          <img src="assets/krishna-sagar.jpg" alt="Portrait of Krishna Sagar" width="1024" height="1024" loading="eager" fetchpriority="high">
-        </figure>
-        <div class="side__block">
-          <p class="side__title">Managing Director</p>
-          <p class="side__org">BlackMatter Builders &amp; Developers</p>
-        </div>
-        <dl class="facts">
-          <div><dt>Based</dt><dd>Thrissur, Kerala</dd></div>
-          <div><dt>Focus</dt><dd>Tech · Automobiles · Real Estate</dd></div>
-        </dl>
-        <ul class="socials">
-          <li><a href="https://www.linkedin.com/in/krsnasgr/" target="_blank" rel="noopener"><span>LinkedIn</span><em>in/krsnasgr</em></a></li>
-          <li><a href="https://x.com/krsnasgr" target="_blank" rel="noopener"><span>X</span><em>@krsnasgr</em></a></li>
-          <li><a href="https://instagram.com/krsnasgr" target="_blank" rel="noopener"><span>Instagram</span><em>@krsnasgr</em></a></li>
-          <li><a href="https://facebook.com/krsnasgrfb" target="_blank" rel="noopener"><span>Facebook</span><em>/krsnasgrfb</em></a></li>
-          <li><a href="mailto:krsnasgr@gmail.com"><span>Email</span><em>krsnasgr@gmail.com</em></a></li>
-        </ul>
-      </aside>
+    <!-- Projects -->
+    <section class="block" aria-labelledby="projects-h">
+      <h2 id="projects-h" class="block-h">PROJECTS</h2>
+      <ul class="projects">
 
-      <section class="body">
+        <li>
+          <a href="https://github.com/krsnasgr/nifty-tick-recorder" target="_blank" rel="noopener">
+            <span class="project__body">
+              <span class="project__name">nifty-tick-recorder</span>
+              <span class="project__desc">Standalone Nifty 50 tick recorder using DhanHQ WebSocket — records index, futures, options depth &amp; OI chain to CSV.</span>
+            </span>
+            <span class="project__meta">Python</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
 
-        <header class="lede">
-          <h1 class="name">Krishna Sagar</h1>
-          <p class="kicker">360° experience across technology, automobiles, and real estate — building residential, retail, and hospitality brands out of Thrissur, Kerala.</p>
-        </header>
+        <li>
+          <a href="https://github.com/krsnasgr/claude-md-boilerplate" target="_blank" rel="noopener">
+            <span class="project__body">
+              <span class="project__name">claude-md-boilerplate</span>
+              <span class="project__desc">Drop-in CLAUDE.md boilerplate with persistent memory bank, self-maintaining docs, and optimized token economy.</span>
+            </span>
+            <span class="project__meta">Markdown</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
 
-        <section class="bio" aria-labelledby="bio-h">
-          <h2 id="bio-h" class="block-h"><span>01</span> Profile</h2>
-          <div class="bio__body">
-            <p>Krishna Sagar is Managing Director at <a href="https://blackmatterbuilders.com" target="_blank" rel="noopener">BlackMatter Builders &amp; Developers</a>, where he leads the strategic vision and operational execution for high-end residential and commercial projects. The group operates multiple brands — including <a href="https://tatwarealty.com" target="_blank" rel="noopener">TATWA</a>, delivering <em>Fuchsia Gardens</em> in Irinjalakuda, and <a href="https://waawmall.com" target="_blank" rel="noopener">WAAW Mall</a>, a commercial and lifestyle destination in the same town.</p>
-            <p>He is also Chief Executive Officer of <a href="https://carclubexoticmachines.com" target="_blank" rel="noopener">Car Club Exotic Machines</a>, sourcing, customizing, and delivering premium preowned automobiles for enthusiasts. A technologist by training, he previously served as CTO at Krysllio Technologies (2017–2024) and General Manager at Smart Infotech (2016–2017).</p>
-          </div>
-        </section>
+        <li>
+          <a href="https://github.com/krsnasgr/claude-notify" target="_blank" rel="noopener">
+            <span class="project__body">
+              <span class="project__name">claude-notify</span>
+              <span class="project__desc">VS Code extension that pings you when Claude Code finishes a task — never miss a response while multitasking.</span>
+            </span>
+            <span class="project__meta">TypeScript</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
 
-        <section class="vents" aria-labelledby="vents-h">
-          <h2 id="vents-h" class="block-h"><span>02</span> Current Roles</h2>
-          <ol class="vents__list">
-            <li class="vent">
-              <a href="https://blackmatterbuilders.com" target="_blank" rel="noopener" class="vent__link">
-                <span class="vent__name">BlackMatter Builders &amp; Developers</span>
-                <span class="vent__role">Managing Director · Parent group</span>
-                <span class="vent__dates">2025 — Now</span>
-                <span class="vent__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="vent">
-              <a href="https://carclubexoticmachines.com" target="_blank" rel="noopener" class="vent__link">
-                <span class="vent__name">Car Club Exotic Machines</span>
-                <span class="vent__role">Chief Executive Officer · Automotive</span>
-                <span class="vent__dates">2017 — Now</span>
-                <span class="vent__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="vent">
-              <a href="https://tatwarealty.com" target="_blank" rel="noopener" class="vent__link">
-                <span class="vent__name">TATWA</span>
-                <span class="vent__role">Co-founder · Premium residences</span>
-                <span class="vent__dates">2025 — Now</span>
-                <span class="vent__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="vent">
-              <a href="https://waawmall.com" target="_blank" rel="noopener" class="vent__link">
-                <span class="vent__name">WAAW Mall</span>
-                <span class="vent__role">Retail &amp; lifestyle · Commercial</span>
-                <span class="vent__dates">2025 — Now</span>
-                <span class="vent__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-          </ol>
-        </section>
+      </ul>
+    </section>
 
-        <section class="vents vents--past" aria-labelledby="prev-h">
-          <h2 id="prev-h" class="block-h"><span>03</span> Previously</h2>
-          <ol class="vents__list">
-            <li class="vent">
-              <span class="vent__link vent__link--static">
-                <span class="vent__name">Krysllio Technologies</span>
-                <span class="vent__role">Chief Technology Officer · Digital services</span>
-                <span class="vent__dates">2017 — 2024</span>
-                <span class="vent__arrow" aria-hidden="true"></span>
-              </span>
-            </li>
-            <li class="vent">
-              <span class="vent__link vent__link--static">
-                <span class="vent__name">Smart Infotech</span>
-                <span class="vent__role">General Manager · Web &amp; education</span>
-                <span class="vent__dates">2016 — 2017</span>
-                <span class="vent__arrow" aria-hidden="true"></span>
-              </span>
-            </li>
-          </ol>
-        </section>
-
-      </section>
-
-    </main>
-
-    <footer class="foot">
-      <span>© <span id="year">2026</span> Krishna Sagar</span>
-      <span class="foot__dot">·</span>
-      <span>krsnasgr.com</span>
+    <!-- Footer / connect -->
+    <footer class="foot" aria-label="Connect">
+      <a href="https://www.linkedin.com/in/krsnasgr/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/krsnasgr" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://instagram.com/krsnasgr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/krsnasgrfb" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://github.com/krsnasgr" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:krsnasgr@gmail.com">Email</a>
     </footer>
 
-  </div>
+    <p class="copyright">© <span id="year">2026</span> Krishna Sagar</p>
+
+  </main>
 
   <script src="main.js"></script>
 </body>
