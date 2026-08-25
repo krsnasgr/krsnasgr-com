@@ -4,15 +4,13 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://krsnasgr.com/</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://krsnasgr.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://krsnasgr.com/"/>
     <image:image>
       <image:loc>https://krsnasgr.com/assets/krishna-sagar.jpg</image:loc>
       <image:title>Krishna Sagar</image:title>
-      <image:caption>Portrait of Krishna Sagar, Managing Director of BlackMatter Builders &amp; Developers.</image:caption>
+      <image:caption>Portrait of Krishna Sagar, Managing Partner at BlackMatter Builders &amp; Developers.</image:caption>
     </image:image>
   </url>
 </urlset>
